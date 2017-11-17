@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +40,7 @@ public class FragmentB extends Fragment {
     }
 
     public void changeTextAndSize(String message, int size){
-        txvTexto.setTextSize(size);
+        txvTexto.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
         txvTexto.setText(message);
     }
 
@@ -55,7 +56,7 @@ public class FragmentB extends Fragment {
         super.onActivityCreated(savedInstanceState);
         if(savedInstanceState != null){
             txvTexto.setText(savedInstanceState.getString("message"));
-            txvTexto.setTextSize(savedInstanceState.getFloat("size"));
+            txvTexto.setTextSize(TypedValue.COMPLEX_UNIT_PX, savedInstanceState.getFloat("size"));
         }
     }
 
